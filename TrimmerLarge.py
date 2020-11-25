@@ -72,7 +72,7 @@ def readBuffer(f, bufferSize):
 if __name__ == "__main__":
   
   #use homePC=1 when running in spyder, use 0 when running on HPC
-  homePC = 1
+  homePC = 0
   if homePC == 1:
     #the source file that will be trimmed
     filename = "brahSplits00-00.fastq"
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     windowSize = 1000
 
     #minimum length of each fastq sequence
-    # minLen = 1000
+    minLen = 1000
     
     #trim mode (D=dynamic, S=static)
     mode = "S"
@@ -119,6 +119,8 @@ if __name__ == "__main__":
     outMode = sys.argv[9]
     # trimStats = sys.argv[10].split(".")
     
+    # python3 TrimmerLarge.py [fastqFilename(no file extention)] [directory(~/)] [directory(~/)] [1000] [1000] ["LT-U0-S"] [7] [10(10 megamytes)] [".fastq"]
+    # python3 TrimmerLarge.py myFile "~/" "~/" 1000 1000 "LT-U0-S" 7 10 ".fastq"
   
   trimSpecsList = trimSpecs.split("-")
   

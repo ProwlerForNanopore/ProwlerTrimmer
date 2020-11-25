@@ -113,17 +113,18 @@ if __name__ == "__main__":
     windowSize = int(sys.argv[4])
     minLen = int(sys.argv[5])
     # mode = sys.argv[6][-1]
+    trimSpecs = sys.argv[6]
     Qcutoff = int(sys.argv[7])
     seqsToAnalyze = int(sys.argv[8])
     outMode = sys.argv[9]
     # trimStats = sys.argv[10].split(".")
-    trimSpecs = sys.argv[6]
+    
   
   trimSpecsList = trimSpecs.split("-")
   
   
   #variables denoting the size of each buffer element: n*Mb = n megabytes
-  n = 4
+  n = 1
   Mb = 1024**2
   bufferSize = n*Mb
   

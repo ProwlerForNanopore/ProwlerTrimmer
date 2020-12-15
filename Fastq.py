@@ -8,7 +8,6 @@ import numpy as np
 #import pylab as pl
 
 class Fastq:
- 
   #initializes the class by taking the four lines of the fastQ format
   #and turns that into (0)name, (1)sequence, and (3)quality
   def __init__(self, fourLines,minLen):
@@ -362,14 +361,14 @@ def rollingTrimAllSeqs(seqs,Qcutoff,windowSize,mode, minLen):
   trimCoverage = 0
   rawCoverage = 0
   if mode == "S":
-    print("entering static mode:")
+#    print("entering static mode:")
     for n in range(len(seqs)):
       seqs[n].rollingTrimStatic(Qcutoff,windowSize)
       trimCoverage += seqs[n].trimLength
       rawCoverage += seqs[n].length
       
   elif mode == "D":
-    print("entering dynamic mode:")
+#    print("entering dynamic mode:")
     for n in range(len(seqs)):
       seqs[n].rollingTrimDynamic(Qcutoff,windowSize)
       trimCoverage += seqs[n].trimLength
@@ -377,12 +376,12 @@ def rollingTrimAllSeqs(seqs,Qcutoff,windowSize,mode, minLen):
   else:
     print("error. mode selected not available. please select S or D")
   
-  if rawCoverage > 0:
-    print("raw: ", rawCoverage, " Trim: ", trimCoverage, \
-        "ratio: ",round(trimCoverage/rawCoverage,2))
-  else:
-    print("raw coverage: ", rawCoverage)
-    print("trim coverage: ", trimCoverage)
+#  if rawCoverage > 0:
+#    print("raw: ", rawCoverage, " Trim: ", trimCoverage, \
+#        "ratio: ",round(trimCoverage/rawCoverage,2))
+#  else:
+#    print("raw coverage: ", rawCoverage)
+#    print("trim coverage: ", trimCoverage)
   
   return trimCoverage
 
@@ -457,11 +456,11 @@ def writeFastq(seqs,file):
       dcount+=1
       
   # this if statement is to prevent div by zero error when printing the discard ratio
-  if (dcount + acount == 0):
-    print("dcount + acount = 0")
-  else:
-    print("discarded:", round(dcount/(dcount+acount),2) , \
-          "printed:", round(acount/(dcount+acount),2))
+#  if (dcount + acount == 0):
+#    print("dcount + acount = 0")
+#  else:
+#    print("discarded:", round(dcount/(dcount+acount),2) , \
+#          "printed:", round(acount/(dcount+acount),2))
   f.close()
   
 #Takes a list of fastq objects as defined by the fastq class and outputs a 
@@ -482,7 +481,7 @@ def writeFasta(seqs, file):
       acount+=1
     else:
       dcount+=1
-  print("discarded:", dcount ,"printed:", acount)
+#  print("discarded:", dcount ,"printed:", acount)
   f.close()
     
 def getFileLen(FQfile):

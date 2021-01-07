@@ -1,1 +1,2 @@
-
+1: implement rejected reads output and create -option for toggling it
+2: implement limits on what can be accepted for each -option and make the program throw "out of bounds" errors when beyond these limits

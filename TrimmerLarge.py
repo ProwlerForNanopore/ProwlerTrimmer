@@ -111,19 +111,19 @@ if __name__ == "__main__":
     outFolder = options.outFolder
     
     #size of the trim window
-    windowSize = options.windowSize
+    windowSize = int(options.windowSize)
 
     #minimum length of each fastq sequence
-    minLen = options.minLen
+    minLen = int(options.minLen)
     
     #trim mode (D=dynamic, S=static)
     mode = options.mode
     
     #Phred Quality score threshold
-    Qcutoff = options.Qcutoff
+    Qcutoff = int(options.Qcutoff)
     
     #number of sequences to analyze (0=all)
-    maxDataMB = options.maxDataMB
+    maxDataMB = int(options.maxDataMB)
     
     #u\output format of the trimmed file (fq=fastq, fa=fasta)
     outMode = options.outMode

@@ -35,9 +35,13 @@ Trimming tool for Oxford Nanopore sequence data
 [minLen] = minimum number of bases in read. reads with fewer bases will be rejected
 
 [trimSpecs] = trim specs: [X1]-[X2]-[X3] (string)
+	
 	X1: "L", "T", "LT", or "". L clips leading Ns, T clips trailing Ns, LT clips both, "" clips neither. recommended mode is LT
+	
 	X2: U0, F0, F1, F2... U0=unfragmented output, F0=fragmented output with all fragments, F[n]= fragmented output with n largest fragments
+	
 	X3: S, D. S=static mode. D=dynamic mode
+	
   example: "X1-X2-X3" -> "LT-U0-S"
 
 [Qcutoff] = phred quality score threshold. (integer)

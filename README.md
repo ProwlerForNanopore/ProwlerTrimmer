@@ -53,12 +53,15 @@ Trimming tool for Oxford Nanopore sequence data
 example execution:
 
 **runMode=0:**
+
 python3 TrimmerLarge.py -f [filename] -i [inFolder] -o [outFolder] -w [windowSize] -l [minLen] -c [clipping] -g [fragments] -m [mode] -q [Qcutoff] -d [maxDataMB] -r [outMode]
 
 with example vriables:
+
 python3 TrimmerLarge.py -f "myFile.fastq" -i "~/myFastqFiles/" -o "~/myTrimmedFiles/" -w 1000 -l 1000 -c "LT" -g "F1" -m "S" -q 12 -d 10 -r ".fastq"
 
 or with defaults, selecting only the algorithm mode and the quality cutoff:
+
 python3 TrimmerLarge.py -f "myFile.fastq" -m "S" -q 12
 
 **runMode=2:**
@@ -69,6 +72,7 @@ The preferred way to run this script is using runMode=0.
 python3 TrimmerLarge.py [filename] [inFolder] [outFolder] [windowSize] [minLen] [trimSpecs] [Qcutoff] [seqsToAnalyze] [outMode]
 
 with example vriables:
+
 python3 TrimmerLarge.py "myFile.fastq" "~/myFastqFiles/" "~/myTrimmedFiles/" 1000 1000 "LT-F1-S" 12 10 ".fastq"
 
 **runMode=1:**

@@ -1,27 +1,27 @@
 # ProwlerTrimmer
 Trimming tool for Oxford Nanopore sequence data
 
--f, 	--file	 	filename	The name of the file you want to trim, wihtout the folderpath"
+-f, 	--file,		filename:	The name of the file you want to trim, wihtout the folderpath"
 
--i, 	--infolder 	inFolder	The folderpath where your file to be trimmed is located (default = cwd)
+-i, 	--infolder, 	inFolder:	The folderpath where your file to be trimmed is located (default = cwd)
 
--o, 	--outfolder 	outFolder	The folderpath where your want to save the trimmed file (default = cwd)
+-o, 	--outfolder,	outFolder:	The folderpath where your want to save the trimmed file (default = cwd)
 
--w, 	--windowsize 	windowSize	Change the size of the trimming window (default= 100bp)
+-w, 	--windowsize,	windowSize:	Change the size of the trimming window (default= 100bp)
 
--l, 	--minlen 	minLen		Change the minimum acceptable numer of bases in a read (default=100)
+-l, 	--minlen,	minLen:		Change the minimum acceptable numer of bases in a read (default=100)
 
--m, 	--trimmode 	mode		Select trimming algorithm: S for static  or D for dynamic (default=S)
+-m, 	--trimmode,	mode:		Select trimming algorithm: S for static  or D for dynamic (default=S)
 
--q, 	--qscore 	Qcutoff		Select the phred quality score trimming threshold (default=7)
+-q, 	--qscore,	Qcutoff:	Select the phred quality score trimming threshold (default=7)
 
--d, 	--datamax 	maxDataMB	Select a maximum data subsample in MB (default=0, entire file)
+-d, 	--datamax,	maxDataMB:	Select a maximum data subsample in MB (default=0, entire file)
 
--r, 	--outformat 	outMode		Select output format of trimmed file (fastq or fasta) (default=.fastq)
+-r, 	--outformat,	outMode:	Select output format of trimmed file (fastq or fasta) (default=.fastq)
 
--c, 	--clip	 	clipping	Select L to clip leading Ns, T to trim trialing Ns and LT to trim both (default=LT)
+-c, 	--clip,		clipping:	Select L to clip leading Ns, T to trim trialing Ns and LT to trim both (default=LT)
 
--g, 	--fragments 	fragments	Select fragmentation mode (default=U0)
+-g, 	--fragments,	fragments:	Select fragmentation mode (default=U0)
 
 
 [filename] = filename, including file extention (string)

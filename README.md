@@ -1,8 +1,6 @@
 # ProwlerTrimmer
 Trimming tool for Oxford Nanopore sequence data
 
-For runMode = 0
-
 -f, 	--file	 	filename	The name of the file you want to trim, wihtout the folderpath"
 
 -i, 	--infolder 	inFolder	The folderpath where your file to be trimmed is located (default = cwd)
@@ -49,8 +47,6 @@ For runMode = 0
 [outMode]: output file extension. saves trimmed data as either ".fasta" or ".fastq"
 
 example execution:
-
-
 
 **runMode=0:**
 python3 TrimmerLarge.py -f [filename] -i [inFolder] -o [outFolder] -w [windowSize] -l [minLen] -c [clipping] -g [fragments] -m [mode] -q [Qcutoff] -d [maxDataMB] -r [outMode]

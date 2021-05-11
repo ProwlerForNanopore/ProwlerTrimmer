@@ -1,26 +1,17 @@
 # ProwlerTrimmer
 Trimming tool for Oxford Nanopore sequence data
 
+```
 -f, 	--file,		filename:	The name of the file you want to trim, wihtout the folderpath"
-
 -i, 	--infolder, 	inFolder:	The folderpath where your file to be trimmed is located (default = cwd)
-
 -o, 	--outfolder,	outFolder:	The folderpath where your want to save the trimmed file (default = cwd)
-
 -w, 	--windowsize,	windowSize:	Change the size of the trimming window (default= 100bp)
-
 -l, 	--minlen,	minLen:		Change the minimum acceptable numer of bases in a read (default=100)
-
 -m, 	--trimmode,	mode:		Select trimming algorithm: S for static  or D for dynamic (default=S)
-
 -q, 	--qscore,	Qcutoff:	Select the phred quality score trimming threshold (default=7)
-
 -d, 	--datamax,	maxDataMB:	Select a maximum data subsample in MB (default=0, entire file)
-
 -r, 	--outformat,	outMode:	Select output format of trimmed file (fastq or fasta) (default=.fastq)
-
 -c, 	--clip,		clipping:	Select L to clip leading Ns, T to trim trialing Ns and LT to trim both (default=LT)
-
 -g, 	--fragments,	fragments:	Select fragmentation mode (default=U0)
 
 
@@ -56,13 +47,14 @@ example execution:
 
 python3 TrimmerLarge.py -f [filename] -i [inFolder] -o [outFolder] -w [windowSize] -l [minLen] -c [clipping] -g [fragments] -m [mode] -q [Qcutoff] -d [maxDataMB] -r [outMode]
 
-with example vriables:
+with example variables:
 
 python3 TrimmerLarge.py -f "myFile.fastq" -i "~/myFastqFiles/" -o "~/myTrimmedFiles/" -w 1000 -l 1000 -c "LT" -g "F1" -m "S" -q 12 -d 10 -r ".fastq"
 
 or with defaults, selecting only the algorithm mode and the quality cutoff:
 
 python3 TrimmerLarge.py -f "myFile.fastq" -m "S" -q 12
+
 
 **runMode=2:**
 This mode requires the variables be listed in the given order and recalled using sys.arg[n]. 
@@ -77,4 +69,4 @@ python3 TrimmerLarge.py "myFile.fastq" "~/myFastqFiles/" "~/myTrimmedFiles/" 100
 
 **runMode=1:**
 A mode that requires the variables section of the python script to be set by editing the python file.
-
+```

@@ -63,7 +63,7 @@ The preferred way to run this script is using runMode=0.
 
 python3 TrimmerLarge.py [filename] [inFolder] [outFolder] [windowSize] [minLen] [trimSpecs] [Qcutoff] [seqsToAnalyze] [outMode]
 
-with example vriables:
+with example variables:
 
 python3 TrimmerLarge.py "myFile.fastq" "~/myFastqFiles/" "~/myTrimmedFiles/" 1000 1000 "LT-F1-S" 12 10 ".fastq"
 

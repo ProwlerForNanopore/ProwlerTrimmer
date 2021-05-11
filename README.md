@@ -16,35 +16,25 @@ Trimming tool for Oxford Nanopore sequence data
 
 
 [filename] = filename, including file extention (string)
-
 [inFolder] = source folder (string)
-
 [outFolder] = output folder (string)
-
 [windowSize] = number of bases in trimmer window (integer)
-
 [minLen] = minimum number of bases in read. reads with fewer bases will be rejected
-
-[trimSpecs] = trim specs: [X1]-[X2]-[X3] (string)
-	
-   X1: "L", "T", "LT", or "". L clips leading Ns, T clips trailing Ns, LT clips both, "" clips neither. recommended mode is LT
-	
-   X2: U0, F0, F1, F2... U0=unfragmented output, F0=fragmented output with all fragments, F[n]= fragmented output with n largest fragments
-	
+[trimSpecs] = trim specs: [X1]-[X2]-[X3] (string)	
+   X1: "L", "T", "LT", or "". L clips leading Ns, T clips trailing Ns, LT clips both, "" clips neither. recommended mode is LT	
+   X2: U0, F0, F1, F2... U0=unfragmented output, F0=fragmented output with all fragments, F[n]= fragmented output with n largest fragments	
    X3: S, D. S=static mode. D=dynamic mode
 	
    example: "X1-X2-X3" -> "LT-U0-S"
 
 [Qcutoff] = phred quality score threshold. (integer)
-
 [seqsToAnalyze] = megabytes of data to trim. trimmer will read files in 1 MB chunks and stop when number of MB exceeds this number.
-
 [outMode]: output file extension. saves trimmed data as either ".fasta" or ".fastq"
-
-example execution:
+```
+Example execution:
 
 **runMode=0:**
-
+```
 python3 TrimmerLarge.py -f [filename] -i [inFolder] -o [outFolder] -w [windowSize] -l [minLen] -c [clipping] -g [fragments] -m [mode] -q [Qcutoff] -d [maxDataMB] -r [outMode]
 
 with example variables:
@@ -54,19 +44,19 @@ python3 TrimmerLarge.py -f "myFile.fastq" -i "~/myFastqFiles/" -o "~/myTrimmedFi
 or with defaults, selecting only the algorithm mode and the quality cutoff:
 
 python3 TrimmerLarge.py -f "myFile.fastq" -m "S" -q 12
-
+```
 
 **runMode=2:**
 This mode requires the variables be listed in the given order and recalled using sys.arg[n]. 
 This usage is deprecated and currently runMode is a hardcoded variable that must be changed by editing the python file. 
 The preferred way to run this script is using runMode=0.
-
+```
 python3 TrimmerLarge.py [filename] [inFolder] [outFolder] [windowSize] [minLen] [trimSpecs] [Qcutoff] [seqsToAnalyze] [outMode]
 
 with example variables:
 
 python3 TrimmerLarge.py "myFile.fastq" "~/myFastqFiles/" "~/myTrimmedFiles/" 1000 1000 "LT-F1-S" 12 10 ".fastq"
-
+```
 **runMode=1:**
 A mode that requires the variables section of the python script to be set by editing the python file.
-```
+
